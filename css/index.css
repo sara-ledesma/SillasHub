@@ -1,0 +1,241 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+img{
+    width: 100%;
+    display: block;
+
+    @media (max-width:480px){
+        max-width: 200px;
+    }
+
+}
+
+body{
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.Header{
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    padding: 40px;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    text-transform: uppercase;
+
+    position: sticky;
+    top: 0;
+
+    .Header-logo{
+        font-size: 24px;
+        font-weight: 600;
+    }
+
+    .Header-menu{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: end;
+        align-items: center;
+        gap: 20px;
+
+        font-size: 12px;
+    }
+
+    .Header-hamburger{
+        display: none;
+        font-size: 50px;
+    }
+
+    @media (max-width:480px){
+        .Header-menu{
+            display: none;
+        }
+        .Header-hamburger{
+            display: block;
+        }
+    }
+
+}
+
+.Section{
+    width: 100%;
+    min-height: 90vh;
+    background-color: white;
+    padding: 40px;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+
+    .Section-wrapper{
+        max-width: 1100px;
+
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        place-content: center;
+        place-items: center;
+        gap: 80px;
+
+        .Section-image{
+            width: 100%;
+
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+        }
+
+        .Section-info{
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: start;
+            align-items: start;
+            gap: 20px;
+
+            .Section-info-title{
+                padding-bottom: 10px;
+                border-bottom: solid 2px;
+
+                font-size: 24px;
+                font-weight: 600;
+                text-transform: uppercase;
+            }
+
+            .Section-info-description{
+                font-size: 14px;
+                font-weight: 200px;
+            }
+
+            .Section-info-button{
+                width: fit-content;
+                height: auto;
+                padding: 8px 16px;
+                border: solid 2px;
+
+                font-size: 14px;
+                color: goldenrod;
+            }
+        }
+    }
+
+    @media (max-width:768px){
+        .Section-wrapper{
+            grid-template-columns: 1fr 1.2fr;
+            gap: 50px;
+        }
+    }
+
+    @media (max-width:480px){
+        .Section-wrapper{
+            .Section-image{
+                justify-content: center;
+                grid-column: span 2;
+
+                order: 1;
+            }
+
+            .Section-info{
+                align-items: center;
+                grid-column: span 2;
+                text-align: center;
+                order: 0;
+            }
+        }
+    }
+}
+
+.Negative{
+    background-color: goldenrod;
+
+    .Section-wrapper{
+        grid-template-columns: 1fr 1.2fr;
+
+        .Section-image{
+            order: 1;
+        }
+        .Section-info{
+            align-items: end;
+            order: 0;
+
+            text-align: right;
+            color: white;
+
+            .Section-info-button{
+                color: white;
+            }
+        }
+    }
+
+    @media (max-width:480px){
+        .Section-wrapper{
+            .Section-info{
+                align-items: center;
+                text-align: center;
+            }
+        }
+    }
+}
+
+.Footer{
+    width: 100%;
+    height: 100vh;
+    background-color: grey;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+
+    .Footer-logo{
+        font-size: 56px;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    .Footer-credits{
+        margin-bottom: 64px;
+        padding-bottom: 20px;
+        border-bottom: solid 2px white;
+
+        font-size: 12px;
+        font-weight: 200;
+        color: goldenrod;
+    }
+
+    .Footer-rrss{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+        color: black;
+
+        .Footer-rrss-link{
+            width: 24px;
+            height: 24px;
+            background-color: white;
+            padding: 8px;
+            border-radius: 5000px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 10px;
+        }
+    }
+}
